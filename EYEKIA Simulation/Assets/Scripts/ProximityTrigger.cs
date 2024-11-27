@@ -16,5 +16,21 @@ public class ProximityTrigger : MonoBehaviour
         
     }
 
-
+    private void OnTriggerStay(Collider other)
+    {
+        //Text Test
+        string name = other.name;
+        switch (name)
+        {
+            case "StartMan":
+                Debug.Log("What a beautiful day");
+                break;
+            case "LorryCargo":
+                Debug.Log("Engine Noises");
+                break;
+            case "Police":
+                Debug.Log("Engine Noises");
+                break;
+        }  
+    }
 }
