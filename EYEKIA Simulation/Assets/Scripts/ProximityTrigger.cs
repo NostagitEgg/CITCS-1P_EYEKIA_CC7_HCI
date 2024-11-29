@@ -5,6 +5,16 @@ using TMPro;
 
 public class ProximityTrigger : MonoBehaviour
 {
+    //Indicator variables
+    CalculateDistance distCalc;
+    float distance;
+
+    private void Start()
+    {
+        distance = GetComponent<CalculateDistance>().distance; //To get the distance var from CalcDist Class
+    }
+
+    //Subtitle variables
     public TextMeshProUGUI subtitles;
     string subText;
 
@@ -12,6 +22,9 @@ public class ProximityTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //To calculate the distance once inside radius
+        other.gameObject.AddComponent<CalculateDistance>();
+
         //If the object in the trigger collider of the player is named...do this
         string name = other.name;
         switch (name)
@@ -54,6 +67,9 @@ public class ProximityTrigger : MonoBehaviour
     //To have no text when out of radius
     private void OnTriggerExit(Collider other)
     {
+        //to stop calculating distance when out of range
+        Destroy(other.gameObject.GetComponent<CalculateDistance>());
+
         subText = "";
         subtitles.text = subText;
         isTalking = false;
@@ -71,7 +87,6 @@ public class ProximityTrigger : MonoBehaviour
         {
             isTalking = false;
         }
-
     }
 
     IEnumerator WordForWord()
@@ -88,7 +103,6 @@ public class ProximityTrigger : MonoBehaviour
             }
         }
     }
-
 
 }
 
