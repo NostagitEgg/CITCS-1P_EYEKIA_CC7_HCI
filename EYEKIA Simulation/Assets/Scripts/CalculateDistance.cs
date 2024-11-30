@@ -24,34 +24,10 @@ public class CalculateDistance : MonoBehaviour
     [SerializeField]
     Vector3 directionRelativeToCam;
 
-    bool canAddToIndicator;
-
-    ProximityTrigger proxy;
-
-    private void Start()
-    {
-        proxy = FindObjectOfType<ProximityTrigger>();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "Capsule" && proxy.isTriggered)
-        {
-            canAddToIndicator = true;
-        }
-    }
-
+    public bool isAdded;
     // Update is called once per frame
     void Update()
-    { 
-        if(proxy.isTriggered)
-        {
-            canAddToIndicator = true;
-        }
-        else
-        {
-            canAddToIndicator = false;
-        }
-
+    {
         distance = Vector3.Distance(transform.position, player.transform.position);
 
         //From reddit
@@ -74,73 +50,716 @@ public class CalculateDistance : MonoBehaviour
         }
 
     }
-
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        //To have the text on left or right depending on direction
-        if (isRight && !isLeft && canAddToIndicator)
+        if (other.name == "Capsule")
         {
+            //To have the text on left or right depending on direction
+            if (isRight && !isLeft)
+            {
+                //indicator texts based on collider
+                string name = this.gameObject.name;
+                switch (name)
+                {
+                    case "LorryMoving":
+                        indText = "Incoming Vehicle";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "MinivanMoving":
+                        indText = "Incoming Vehicle";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "MuscleMoving":
+                        indText = "Incoming Vehicle";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "PoliceMoving":
+                        indText = "SIRENS";
+                        if (R_IndicatorText[0].text == "")
+                        {
+                            R_IndicatorText[0].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[0].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[1].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "AmbulanceMoving":
+                        indText = "SIRENS";
+                        if (R_IndicatorText[0].text == "")
+                        {
+                            R_IndicatorText[0].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[0].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[1].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "StartMan":
+                        indText = "Person Talking";
+                        if (R_IndicatorText[4].text == "")
+                        {
+                            R_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "CrimeWoman":
+                        indText = "Person Talking";
+                        if (R_IndicatorText[4].text == "")
+                        {
+                            R_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Man":
+                        indText = "Person Talking";
+                        if (R_IndicatorText[4].text == "")
+                        {
+                            R_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "LorryCargo":
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Police":
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Minivan":
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Ambulance":
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text == "")
+                        {
+                            R_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (R_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            R_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+                }
+
+
+            }
+            else if (isLeft && !isRight)
+            {
+                //indicator texts based on collider
+                string name = this.gameObject.name;
+                switch (name)
+                {
+                    case "LorryMoving":
+                        indText = "Incoming Vehicle";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "MinivanMoving":
+                        indText = "Incoming Vehicle";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "MuscleMoving":
+                        indText = "Incoming Vehicle";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "PoliceMoving":
+                        indText = "SIRENS";
+                        if (L_IndicatorText[0].text == "")
+                        {
+                            L_IndicatorText[0].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[0].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[1].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "AmbulanceMoving":
+                        indText = "SIRENS";
+                        if (L_IndicatorText[0].text == "")
+                        {
+                            L_IndicatorText[0].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[0].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[1].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "StartMan":
+                        indText = "Person Talking";
+                        if (L_IndicatorText[4].text == "")
+                        {
+                            L_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "CrimeWoman":
+                        indText = "Person Talking";
+                        if (L_IndicatorText[4].text == "")
+                        {
+                            L_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Man":
+                        indText = "Person Talking";
+                        if (L_IndicatorText[4].text == "")
+                        {
+                            L_IndicatorText[4].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[4].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[5].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "LorryCargo":
+                        indText = "Engine Noises";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Police":
+                        indText = "Engine Noises";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Minivan":
+                        indText = "Engine Noises";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+
+                    case "Ambulance":
+                        indText = "Engine Noises";
+                        if (L_IndicatorText[2].text == "")
+                        {
+                            L_IndicatorText[2].text = indText;
+                            isAdded = true;
+                        }
+                        else if (L_IndicatorText[2].text != "" && !isAdded)
+                        {
+                            L_IndicatorText[3].text = indText;
+                            isAdded = true;
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Capsule")
+        {
+
             //indicator texts based on collider
+            //Right side
             string name = this.gameObject.name;
             switch (name)
             {
                 case "LorryMoving":
+                    indText = "Incoming Vehicle";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
                 case "MinivanMoving":
+                    indText = "Incoming Vehicle";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
                 case "MuscleMoving":
                     indText = "Incoming Vehicle";
-                    R_IndicatorText[1].text = indText;
-
-                    if(R_IndicatorText[1] != null)
+                    if (R_IndicatorText[2].text != "")
                     {
-                        R_IndicatorText[2].text = indText;
-
-                        if (R_IndicatorText[2] != null)
-                        {
-                            R_IndicatorText[3].text = indText;
-                        }
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
                     }
                     break;
 
                 case "PoliceMoving":
+                    indText = "SIRENS";
+                    if (R_IndicatorText[0].text != "")
+                    {
+                        R_IndicatorText[0].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[1].text != "")
+                    {
+                        R_IndicatorText[1].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
                 case "AmbulanceMoving":
                     indText = "SIRENS";
-                    R_IndicatorText[0].text = indText;
+                    if (R_IndicatorText[0].text != "")
+                    {
+                        R_IndicatorText[0].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[1].text != "")
+                    {
+                        R_IndicatorText[1].text = "";
+                        isAdded = false;
+                    }
                     break;
 
                 case "StartMan":
                     indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        R_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        R_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
                     break;
 
                 case "CrimeWoman":
                     indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        R_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        R_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
                     break;
 
                 case "Man":
                     indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        R_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        R_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
                     break;
 
                 case "LorryCargo":
-                case "Police":
-                case "Minivan":
-                case "Ambulance":
                     indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
                     break;
 
-                default:
-                    indText = "";
-
-                    if (!canAddToIndicator)
+                case "Police":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
                     {
-                        R_IndicatorText[0].text = "";
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Minivan":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Ambulance":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        R_IndicatorText[3].text = "";
+                        isAdded = false;
                     }
                     break;
             }
 
-            
-        }
-        else if (isLeft && !isRight && canAddToIndicator)
-        {
+            //Left side
+            switch (name)
+            {
+                case "LorryMoving":
+                    indText = "Incoming Vehicle";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
 
+                case "MinivanMoving":
+                    indText = "Incoming Vehicle";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "MuscleMoving":
+                    indText = "Incoming Vehicle";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "PoliceMoving":
+                    indText = "SIRENS";
+                    if (L_IndicatorText[0].text != "")
+                    {
+                        L_IndicatorText[0].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[1].text != "")
+                    {
+                        L_IndicatorText[1].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "AmbulanceMoving":
+                    indText = "SIRENS";
+                    if (L_IndicatorText[0].text != "")
+                    {
+                        L_IndicatorText[0].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[1].text != "")
+                    {
+                        L_IndicatorText[1].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "StartMan":
+                    indText = "Person Talking";
+                    if (L_IndicatorText[4].text != "")
+                    {
+                        L_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[5].text != "")
+                    {
+                        L_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "CrimeWoman":
+                    indText = "Person Talking";
+                    if (L_IndicatorText[4].text != "")
+                    {
+                        L_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[5].text != "")
+                    {
+                        L_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Man":
+                    indText = "Person Talking";
+                    if (L_IndicatorText[4].text != "")
+                    {
+                        L_IndicatorText[4].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[5].text != "")
+                    {
+                        L_IndicatorText[5].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "LorryCargo":
+                    indText = "Engine Noises";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Police":
+                    indText = "Engine Noises";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Minivan":
+                    indText = "Engine Noises";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        L_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+
+                case "Ambulance":
+                    indText = "Engine Noises";
+                    if (L_IndicatorText[2].text != "")
+                    {
+                        R_IndicatorText[2].text = "";
+                        isAdded = false;
+                    }
+                    else if (L_IndicatorText[3].text != "")
+                    {
+                        L_IndicatorText[3].text = "";
+                        isAdded = false;
+                    }
+                    break;
+            }
 
         }
     }

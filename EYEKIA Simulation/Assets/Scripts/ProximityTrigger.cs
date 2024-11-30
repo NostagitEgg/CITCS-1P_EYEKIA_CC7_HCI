@@ -10,11 +10,8 @@ public class ProximityTrigger : MonoBehaviour
     string subText;
 
     bool isTalking; //To check if someone near is talking
-
-    public bool isTriggered;
     private void OnTriggerEnter(Collider other)
     {
-        isTriggered = true;
         //If the object in the trigger collider of the player is named...do this
         string name = other.name;
         switch (name)
@@ -55,8 +52,6 @@ public class ProximityTrigger : MonoBehaviour
         subText = "";
         subtitles.text = subText;
         isTalking = false;
-
-        isTriggered = false;
     }
 
     // Update is called once per frame
