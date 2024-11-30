@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class CalculateDistance : MonoBehaviour
 {
+    //Indicator variables
+    public GameObject[] leftIndicators;
+    public GameObject[] rightIndicators;
+    public TextMeshProUGUI[] L_IndicatorText;
+    public TextMeshProUGUI[] R_IndicatorText;
+    public string indText;
+
     //Variables for Calculating Distance
     public GameObject player;
     public float distance;
@@ -17,29 +24,34 @@ public class CalculateDistance : MonoBehaviour
     [SerializeField]
     Vector3 directionRelativeToCam;
 
-    public GameObject[] leftIndicators;
-    public GameObject[] rightIndicators;
-    public TextMeshProUGUI[] L_IndicatorText;
-    public TextMeshProUGUI[] R_IndicatorText;
-    string indText;
-    bool isHeard;
+    bool canAddToIndicator;
 
-    /*private void Start()
-    {
-        isHeard = player.GetComponent<ProximityTrigger>().isHeard;
-    }*/
+    ProximityTrigger proxy;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        string name = this.name;
+        proxy = FindObjectOfType<ProximityTrigger>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Capsule" && proxy.isTriggered)
+        {
+            canAddToIndicator = true;
+        }
+        else if (proxy.isTriggered == false) 
+        {
+            canAddToIndicator = false;
+        }
+
+        //indicator texts based on collider
+        string name = this.gameObject.name;
         switch (name)
         {
             case "StartMan":
                 indText = "Person Talking";
                 break;
 
-            /*case "CrimeWoman":
+            case "CrimeWoman":
                 indText = "Person Talking";
                 break;
 
@@ -48,67 +60,91 @@ public class CalculateDistance : MonoBehaviour
                 break;
 
             case "LorryCargo":
+                indText = "Engine Noises";
+                break;
+
             case "Police":
+                indText = "Engine Noises";
+                break;
+
             case "Minivan":
+                indText = "Engine Noises";
+                break;
+
             case "Ambulance":
                 indText = "Engine Noises";
-                break;*/
+                break;
 
             default:
                 indText = "";
                 break;
         }
+    }
 
-         distance = Vector3.Distance(transform.position, player.transform.position);
+    // Update is called once per frame
+    void Update()
+    { 
+        distance = Vector3.Distance(transform.position, player.transform.position);
 
-         //From reddit
-         //Direction of this object from player
-         directionRelativeToCam = transform.position - player.transform.position;
-         //however the direction is not that useful because if your player faces north, his right side is to the east, but if he 
-         //faces south, his right side is west.
-         //so we need to rotate the direction Dir, to make sure it is unaffected by the players rotation
-         directionRelativeToCam = Quaternion.Inverse(player.transform.rotation) * directionRelativeToCam;
+        //From reddit
+        //Direction of this object from player
+        directionRelativeToCam = transform.position - player.transform.position;
+        //however the direction is not that useful because if your player faces north, his right side is to the east, but if he 
+        //faces south, his right side is west.
+        //so we need to rotate the direction Dir, to make sure it is unaffected by the players rotation
+        directionRelativeToCam = Quaternion.Inverse(player.transform.rotation) * directionRelativeToCam;
 
-        /*if (directionRelativeToCam.x < 0 && isHeard)
+        if (directionRelativeToCam.x < 0)
         {
-             isRight = false;
-             isLeft = true;
-
-             for (int i = 0; i < leftIndicators.Length; i++)
-             {
-                 //leftIndicators[i].SetActive(true);
-                 //if text in the indicator is empty, make the holder active and make it the text
-                 if (L_IndicatorText[i].text == "")
-                 {
-                     L_IndicatorText[i].text = indText;
-                    break;
-                 }
-                 else
-                 {
-                     i++;
-                 }
-             }
+            isRight = false;
+            isLeft = true;
         }
-        else if (directionRelativeToCam.x > 0 && isHeard)
+        else if (directionRelativeToCam.x > 0)
         {
-             isRight = true;
-             isLeft = false;
+            isRight = true;
+            isLeft = false;
+        }
 
-             for (int i = 0; i < rightIndicators.Length; i++)
-             {
-                 //rightIndicators[i].SetActive(true);
-                 if (R_IndicatorText[i].text == "")
-                 {
-                     R_IndicatorText[i].text = indText;
-                    break;
-                 }
-                 else
-                 {
-                     i++;
-                 }
-             }
-        }*/
-        
-    
+        //To have the text on left or right depending on direction, and to use free indicator space
+        if (isRight && !isLeft)
+        {
+            for (int i = 0; i <= 5 && canAddToIndicator; i++)
+            {
+                if (R_IndicatorText[i].text == "")
+                {
+                    R_IndicatorText[i].text = indText;
+                }
+                else if (R_IndicatorText[i].text != "")
+                {
+                    R_IndicatorText[i + 1].text = indText;
+                }
+                if (R_IndicatorText[5].text != "")
+                {
+                    canAddToIndicator = false;
+                    R_IndicatorText[i].text = "";
+                }
+            }
+        }
+        else if (isLeft && !isRight)
+        {
+
+            for (int i = 0; i < 5 && canAddToIndicator; i++)
+            {
+                if (L_IndicatorText[i].text == "")
+                {
+                    L_IndicatorText[i].text = indText;
+                    R_IndicatorText[i].text = "";
+                }
+                else if (L_IndicatorText[i].text != "")
+                {
+                    L_IndicatorText[i + 1].text = indText;
+                }
+                if (R_IndicatorText[5].text != "")
+                {
+                    canAddToIndicator = false;
+                    R_IndicatorText[i].text = "";
+                }
+            }
+        }
     }
 }

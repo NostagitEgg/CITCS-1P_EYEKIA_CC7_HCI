@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class ProximityTrigger : MonoBehaviour
 {
-    //Indicator variables
+    /*//Indicator variables
     public GameObject[] leftIndicators;
     public GameObject[] rightIndicators;
     public TextMeshProUGUI[] L_IndicatorText;
     public TextMeshProUGUI[] R_IndicatorText;
-    public string indText;
+    public string indText;*/
     
     //Subtitle variables
     public TextMeshProUGUI subtitles;
@@ -19,7 +18,7 @@ public class ProximityTrigger : MonoBehaviour
 
     bool isTalking; //To check if someone near is talking
 
-    //Variables for Calculating Distance
+    /*//Variables for Calculating Distance
     public GameObject player;
     public float distance;
 
@@ -32,10 +31,12 @@ public class ProximityTrigger : MonoBehaviour
     Vector3 directionRelativeToCam;
 
     [SerializeField]
-    int colliderCounter = 0;
+    int colliderCounter = 0;*/
+
+    public bool isTriggered;
     private void OnTriggerEnter(Collider other)
     {
-
+        isTriggered = true;
         //If the object in the trigger collider of the player is named...do this
         string name = other.name;
         switch (name)
@@ -45,7 +46,7 @@ public class ProximityTrigger : MonoBehaviour
                 subText = "Oh no, whatever happened there! Was it some accident?";
                 StartCoroutine(WordForWord());
 
-                indText = "Person Talking";
+                //indText = "Person Talking";
                 break;
 
             case "CrimeWoman":
@@ -53,7 +54,7 @@ public class ProximityTrigger : MonoBehaviour
                 subText = "I was driving and suddenly some guy appeared right in front of me. I had to swerve!";
                 StartCoroutine(WordForWord());
 
-                indText = "Person Talking";
+                //indText = "Person Talking";
                 break;
 
             case "Man":
@@ -61,23 +62,23 @@ public class ProximityTrigger : MonoBehaviour
                 subText = "What happened just now? I saw the indicator on my Eyekia glasses.";
                 StartCoroutine(WordForWord());
 
-                indText = "Person Talking";
+                //indText = "Person Talking";
                 break;
 
             case "LorryCargo":
-                indText = "Engine Noises";
+                //indText = "Engine Noises";
                 break;
 
             case "Police":
-                indText = "Engine Noises";
+                //indText = "Engine Noises";
                 break;
 
             case "Minivan":
-                indText = "Engine Noises";
+                //indText = "Engine Noises";
                 break;
 
             case "Ambulance":
-                indText = "Engine Noises";
+                //indText = "Engine Noises";
                 break;
 
             default:
@@ -87,7 +88,7 @@ public class ProximityTrigger : MonoBehaviour
                 break;
         }
 
-        if(other.name != "Capsule")
+        /*if(other.name != "Capsule")
         {
             colliderCounter += 1;
 
@@ -95,10 +96,10 @@ public class ProximityTrigger : MonoBehaviour
             {
                 colliderCounter = 0; //Reset counter to avoid out of bounds
             }
-        }
+        }*/
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if(other.name != "Capsule")
         {
@@ -123,17 +124,18 @@ public class ProximityTrigger : MonoBehaviour
             isRight = true;
             isLeft = false;
         }
-    }
+    }*/
 
     //To have no text when out of radius
     private void OnTriggerExit(Collider other)
     {
-        colliderCounter -= 1;
+        //colliderCounter -= 1;
         subText = "";
         subtitles.text = subText;
         isTalking = false;
 
-        indText = "";
+        isTriggered = false;
+        //indText = "";
     }
 
     // Update is called once per frame
@@ -149,7 +151,7 @@ public class ProximityTrigger : MonoBehaviour
             isTalking = false;
         }
 
-        //To have the text on left or right depending on direction, and to use free indicator space
+        /*//To have the text on left or right depending on direction, and to use free indicator space
         if (isRight && !isLeft)
         {
             for (int i = 0; i < colliderCounter; i++)
@@ -178,7 +180,7 @@ public class ProximityTrigger : MonoBehaviour
                     L_IndicatorText[i + 1].text = indText;
                 }
             }
-        }
+        }*/
     }
 
     IEnumerator WordForWord()
