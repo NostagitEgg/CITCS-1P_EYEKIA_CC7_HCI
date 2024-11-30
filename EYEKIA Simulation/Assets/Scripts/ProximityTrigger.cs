@@ -6,20 +6,15 @@ using TMPro;
 public class ProximityTrigger : MonoBehaviour
 {
     //Indicator variables
-    CalculateDistance distCalc;
-    float distance;
+   /* CalculateDistance distCalc;
 
-    public GameObject[] leftIndicators, rightIndicators;
-    public TextMeshProUGUI[] L_IndicatorText, R_IndicatorText;
-    string indText;
+    public GameObject[] leftIndicators;
+    public GameObject[] rightIndicators;
+    public TextMeshProUGUI[] L_IndicatorText;
+    public TextMeshProUGUI[] R_IndicatorText;*/
+    public string indText;
 
-    bool isHeard; //if it makes a sound
-
-    private void Start()
-    {
-        distance = GetComponent<CalculateDistance>().distance; //To get the distance var from CalcDist Class
-
-    }
+    public bool isHeard; //if it makes a sound
 
     //Subtitle variables
     public TextMeshProUGUI subtitles;
@@ -27,12 +22,14 @@ public class ProximityTrigger : MonoBehaviour
 
     bool isTalking; //To check if someone near is talking
 
+    /*private void Start()
+    {
+        distCalc = GetComponent<CalculateDistance>();
+    }*/
+
     private void OnTriggerEnter(Collider other)
     {
         isHeard = true;
-
-        //To calculate the distance once inside radius
-        other.gameObject.AddComponent<CalculateDistance>();
 
         //If the object in the trigger collider of the player is named...do this
         string name = other.name;
@@ -74,16 +71,47 @@ public class ProximityTrigger : MonoBehaviour
                 subtitles.text = subText;
                 isTalking = false;
                 break;
-        }  
+        }
+
+        
+        /*if (distCalc.isLeft)
+        {
+            for (int i = 0; i < leftIndicators.Length; i++)
+            {
+                //leftIndicators[i].SetActive(true);
+                //if text in the indicator is empty, make the holder active and make it the text
+                if (L_IndicatorText[i].text == "")
+                {
+                    L_IndicatorText[i].text = indText;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+        }
+        else if (distCalc.isRight)
+        {
+             for (int i = 0; i < rightIndicators.Length; i++)
+             {
+                 //rightIndicators[i].SetActive(true);
+                 if (R_IndicatorText[i].text == "")
+                 {
+                     R_IndicatorText[i].text = indText;
+                 }
+                 else
+                 {
+                     i++;
+                 }
+             }
+        }*/
+
     }
 
     //To have no text when out of radius
     private void OnTriggerExit(Collider other)
     {
         isHeard = false;
-
-        //to stop calculating distance when out of range
-        Destroy(other.gameObject.GetComponent<CalculateDistance>());
 
         subText = "";
         subtitles.text = subText;
@@ -119,40 +147,40 @@ public class ProximityTrigger : MonoBehaviour
         }
     }
 
-    public void AddToIndicator()
+    /*public void AddToLeftIndicator()
     {
-        if (isHeard && distCalc.isLeft)
+        for (int i = 0; i < leftIndicators.Length; i++)
         {
-            for (int i = 0; i < leftIndicators.Length; i++)
+            //leftIndicators[i].SetActive(true);
+            //if text in the indicator is empty, make the holder active and make it the text
+            if (L_IndicatorText[i] == null)
             {
-                if (L_IndicatorText[i] == null)
-                {
-                    leftIndicators[i].SetActive(true);
-                    L_IndicatorText[i].text = indText;
-                }
-                else
-                {
-                    i++;
-                }
+                L_IndicatorText[i].text = indText;
             }
-        }
-        else if (isHeard && distCalc.isRight)
-        {
-            for (int i = 0; i < rightIndicators.Length; i++)
+            else
             {
-                if (R_IndicatorText[i] == null)
-                {
-                    rightIndicators[i].SetActive(true);
-                    R_IndicatorText[i].text = indText;
-                }
-                else
-                {
-                    i++;
-                }
+                i++;
             }
         }
         
     }
+
+    public void AddToRightIndicator()
+    {
+        for (int i = 0; i < rightIndicators.Length; i++)
+        {
+            //rightIndicators[i].SetActive(true);
+            if (R_IndicatorText[i] == null)
+            {
+                R_IndicatorText[i].text = indText;
+            }
+            else
+            {
+                i++;
+            }
+        }
+
+    }*/
 
 }
 
