@@ -306,6 +306,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -313,6 +338,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!65 &8773608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -517,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2441,7 +2467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2502,11 +2528,6 @@ Transform:
   - {fileID: 298809614}
   - {fileID: 2100208028929528645}
   - {fileID: 7156330664298927836}
-  - {fileID: 5067755742587356242}
-  - {fileID: 6367566384233798092}
-  - {fileID: 6367566385276647894}
-  - {fileID: 7658026096660405405}
-  - {fileID: 710636222336054410}
   - {fileID: 568985597652145161}
   - {fileID: 3716173790669013302}
   - {fileID: 4059073568631992590}
@@ -2594,7 +2615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4306,7 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4409,6 +4430,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -4416,6 +4462,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!54 &298809616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5432,7 +5479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7204,7 +7251,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7221,13 +7268,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9321,7 +9368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10049,7 +10096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10720,7 +10767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11038,7 +11085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11490,7 +11537,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11507,13 +11554,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13011,7 +13058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13086,7 +13133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13878,7 +13925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14171,7 +14218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15676,7 +15723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18327,7 +18374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19845,7 +19892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19948,7 +19995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20290,7 +20337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20365,7 +20412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20806,6 +20853,11 @@ Transform:
   - {fileID: 447599673}
   - {fileID: 1550746806}
   - {fileID: 1942666616}
+  - {fileID: 6367566384233798092}
+  - {fileID: 6367566385276647894}
+  - {fileID: 7658026096660405405}
+  - {fileID: 5067755742587356242}
+  - {fileID: 710636222336054410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429360058
@@ -21377,7 +21429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21600,7 +21652,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -21617,13 +21669,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -22007,7 +22059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -23739,7 +23791,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23756,13 +23808,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -24838,7 +24890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24941,7 +24993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25043,6 +25095,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -25050,6 +25127,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!54 &1685644392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25903,7 +25981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -26144,6 +26222,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -26151,6 +26254,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!54 &1757590975
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27521,6 +27625,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -27528,6 +27657,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!65 &1852017277
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32214,7 +32344,7 @@ Transform:
   - {fileID: 5513552474518554654}
   - {fileID: 4621273092441694589}
   - {fileID: 1908845025949228019}
-  m_Father: {fileID: 159961852}
+  m_Father: {fileID: 1408963330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &736109022243516001
 Transform:
@@ -38046,6 +38176,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -38053,6 +38208,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!4 &3716173790669013302
 Transform:
   m_ObjectHideFlags: 0
@@ -38111,6 +38267,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -38118,6 +38299,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!4 &3719095290233770749
 Transform:
   m_ObjectHideFlags: 0
@@ -39795,6 +39977,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -39802,6 +40009,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!23 &4670776074109954941
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40455,7 +40663,7 @@ Transform:
   m_Children:
   - {fileID: 7435849554023502360}
   - {fileID: 6193983780537609003}
-  m_Father: {fileID: 159961852}
+  m_Father: {fileID: 1408963330}
   m_LocalEulerAnglesHint: {x: 0, y: 101.411, z: 0}
 --- !u!1 &5068009392621055101
 GameObject:
@@ -41178,7 +41386,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5393215579921864749
 MonoBehaviour:
@@ -41193,7 +41401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitles: {fileID: 103780575}
-  isTriggered: 0
+  isInTrigger: 0
 --- !u!1 &5404588203514818459
 GameObject:
   m_ObjectHideFlags: 0
@@ -41342,6 +41550,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -41349,6 +41582,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!1 &5466280206301210296
 GameObject:
   m_ObjectHideFlags: 0
@@ -41552,7 +41786,6 @@ GameObject:
   - component: {fileID: 5544880246607061152}
   - component: {fileID: 2100775297}
   - component: {fileID: 2100775298}
-  - component: {fileID: 5557327951607750377}
   m_Layer: 0
   m_Name: CopWoman
   m_TagString: Untagged
@@ -41560,54 +41793,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5557327951607750377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5557327951607750376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936caf1c5ddc51143b9357682f6dd05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftIndicators:
-  - {fileID: 619908835}
-  - {fileID: 225500165}
-  - {fileID: 147399000}
-  - {fileID: 1997059749}
-  - {fileID: 95897849}
-  - {fileID: 258180118}
-  rightIndicators:
-  - {fileID: 1929133292}
-  - {fileID: 1557561933}
-  - {fileID: 1046911595}
-  - {fileID: 227313611}
-  - {fileID: 1637270272}
-  - {fileID: 427304907}
-  L_IndicatorText:
-  - {fileID: 1492312362}
-  - {fileID: 810608716}
-  - {fileID: 516939330}
-  - {fileID: 1283131175}
-  - {fileID: 1117317280}
-  - {fileID: 585079417}
-  R_IndicatorText:
-  - {fileID: 445007974}
-  - {fileID: 1613531787}
-  - {fileID: 625561645}
-  - {fileID: 1350462501}
-  - {fileID: 1662445406}
-  - {fileID: 1789286884}
-  indText: 
-  player: {fileID: 5393215579921864747}
-  distance: 0
-  camObject: {fileID: 9005220658754338438}
-  playerCam: {fileID: 9005220658754338436}
-  isLeft: 0
-  isRight: 0
-  directionRelativeToCam: {x: 0, y: 0, z: 0}
 --- !u!33 &5558477539266897942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41970,6 +42155,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -41977,6 +42187,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!1 &5844583331996312052
 GameObject:
   m_ObjectHideFlags: 0
@@ -42230,6 +42441,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -42237,6 +42473,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!4 &5978107638357735841
 Transform:
   m_ObjectHideFlags: 0
@@ -42281,7 +42518,6 @@ GameObject:
   - component: {fileID: 9130580636796527750}
   - component: {fileID: 1507172471}
   - component: {fileID: 1507172472}
-  - component: {fileID: 9130580636796527751}
   m_Layer: 0
   m_Name: Kid1
   m_TagString: Untagged
@@ -42302,7 +42538,6 @@ GameObject:
   - component: {fileID: 9130580637857186972}
   - component: {fileID: 1990582360}
   - component: {fileID: 1990582361}
-  - component: {fileID: 9130580637857186973}
   m_Layer: 0
   m_Name: Kid2
   m_TagString: Untagged
@@ -42407,6 +42642,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -42414,6 +42674,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!1 &6047034733026323471
 GameObject:
   m_ObjectHideFlags: 0
@@ -43059,7 +43320,7 @@ Transform:
   - {fileID: 2225192010017695452}
   - {fileID: 966130795472344377}
   - {fileID: 5476122552862340789}
-  m_Father: {fileID: 159961852}
+  m_Father: {fileID: 1408963330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6367566385276647894
 Transform:
@@ -43077,7 +43338,7 @@ Transform:
   - {fileID: 2225192008974911174}
   - {fileID: 966130794410636579}
   - {fileID: 5476122553905174191}
-  m_Father: {fileID: 159961852}
+  m_Father: {fileID: 1408963330}
   m_LocalEulerAnglesHint: {x: 0, y: 178.592, z: 0}
 --- !u!4 &6375861882024927627
 Transform:
@@ -44101,6 +44362,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -44108,6 +44394,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!1 &6964963486626805549
 GameObject:
   m_ObjectHideFlags: 0
@@ -44179,7 +44466,6 @@ GameObject:
   - component: {fileID: 1896864097805076076}
   - component: {fileID: 1151892633}
   - component: {fileID: 1151892634}
-  - component: {fileID: 7658026096660405406}
   m_Layer: 0
   m_Name: Doctor
   m_TagString: Untagged
@@ -44956,6 +45242,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -44963,6 +45274,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!4 &7508272566600894605
 Transform:
   m_ObjectHideFlags: 0
@@ -45075,56 +45387,8 @@ Transform:
   - {fileID: 2455877442098812811}
   - {fileID: 8784268565969204196}
   - {fileID: 4234216011685396324}
-  m_Father: {fileID: 159961852}
+  m_Father: {fileID: 1408963330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7658026096660405406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6993270559793284647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936caf1c5ddc51143b9357682f6dd05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftIndicators:
-  - {fileID: 619908835}
-  - {fileID: 225500165}
-  - {fileID: 147399000}
-  - {fileID: 1997059749}
-  - {fileID: 95897849}
-  - {fileID: 258180118}
-  rightIndicators:
-  - {fileID: 1929133292}
-  - {fileID: 1557561933}
-  - {fileID: 1046911595}
-  - {fileID: 227313611}
-  - {fileID: 1637270272}
-  - {fileID: 427304907}
-  L_IndicatorText:
-  - {fileID: 1492312362}
-  - {fileID: 810608716}
-  - {fileID: 516939330}
-  - {fileID: 1283131175}
-  - {fileID: 1117317280}
-  - {fileID: 585079417}
-  R_IndicatorText:
-  - {fileID: 445007974}
-  - {fileID: 1613531787}
-  - {fileID: 625561645}
-  - {fileID: 1350462501}
-  - {fileID: 1662445406}
-  - {fileID: 1789286884}
-  indText: 
-  player: {fileID: 5393215579921864747}
-  distance: 0
-  camObject: {fileID: 9005220658754338438}
-  playerCam: {fileID: 9005220658754338436}
-  isLeft: 0
-  isRight: 0
-  directionRelativeToCam: {x: 0, y: 0, z: 0}
 --- !u!4 &7671883152194802100
 Transform:
   m_ObjectHideFlags: 0
@@ -45222,6 +45486,31 @@ MonoBehaviour:
   - {fileID: 1662445406}
   - {fileID: 1789286884}
   indText: 
+  gfx:
+  - {fileID: 738835789}
+  - {fileID: 1263367013}
+  - {fileID: 978678205}
+  - {fileID: 896749547}
+  - {fileID: 1746198468}
+  - {fileID: 1341061602}
+  - {fileID: 1675548628}
+  - {fileID: 677918940}
+  - {fileID: 15637602}
+  - {fileID: 1339083424}
+  - {fileID: 1370599541}
+  - {fileID: 346760127}
+  - {fileID: 1519487666}
+  - {fileID: 158016287}
+  - {fileID: 1479156483}
+  - {fileID: 160222569}
+  - {fileID: 1371623536}
+  - {fileID: 298445741}
+  - {fileID: 783350090}
+  - {fileID: 1001552890}
+  - {fileID: 904855270}
+  - {fileID: 1682616955}
+  - {fileID: 1095307081}
+  - {fileID: 602615791}
   player: {fileID: 5393215579921864747}
   distance: 0
   camObject: {fileID: 9005220658754338438}
@@ -45229,6 +45518,7 @@ MonoBehaviour:
   isLeft: 0
   isRight: 0
   directionRelativeToCam: {x: 0, y: 0, z: 0}
+  isAdded: 0
 --- !u!1 &7767421571010620705
 GameObject:
   m_ObjectHideFlags: 0
@@ -46988,7 +47278,7 @@ Transform:
   m_GameObject: {fileID: 8762286024101749859}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.375, z: 5.08}
+  m_LocalPosition: {x: 0, y: 1.375, z: 6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47408,7 +47698,7 @@ Transform:
   m_GameObject: {fileID: 8616685847403613245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 5.08}
+  m_LocalPosition: {x: 0, y: 0, z: 6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47441,7 +47731,7 @@ Transform:
   m_GameObject: {fileID: 9005220658754338438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.375, z: 5.08}
+  m_LocalPosition: {x: 0, y: 1.375, z: 6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47721,54 +48011,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoPlayAnimations: 1
   PaletteOverride: {fileID: 0}
---- !u!114 &9130580636796527751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986958800912450422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936caf1c5ddc51143b9357682f6dd05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftIndicators:
-  - {fileID: 619908835}
-  - {fileID: 225500165}
-  - {fileID: 147399000}
-  - {fileID: 1997059749}
-  - {fileID: 95897849}
-  - {fileID: 258180118}
-  rightIndicators:
-  - {fileID: 1929133292}
-  - {fileID: 1557561933}
-  - {fileID: 1046911595}
-  - {fileID: 227313611}
-  - {fileID: 1637270272}
-  - {fileID: 427304907}
-  L_IndicatorText:
-  - {fileID: 1492312362}
-  - {fileID: 810608716}
-  - {fileID: 516939330}
-  - {fileID: 1283131175}
-  - {fileID: 1117317280}
-  - {fileID: 585079417}
-  R_IndicatorText:
-  - {fileID: 445007974}
-  - {fileID: 1613531787}
-  - {fileID: 625561645}
-  - {fileID: 1350462501}
-  - {fileID: 1662445406}
-  - {fileID: 1789286884}
-  indText: 
-  player: {fileID: 5393215579921864747}
-  distance: 0
-  camObject: {fileID: 9005220658754338438}
-  playerCam: {fileID: 9005220658754338436}
-  isLeft: 0
-  isRight: 0
-  directionRelativeToCam: {x: 0, y: 0, z: 0}
 --- !u!114 &9130580637857186972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47783,54 +48025,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoPlayAnimations: 1
   PaletteOverride: {fileID: 0}
---- !u!114 &9130580637857186973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986958801974174572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936caf1c5ddc51143b9357682f6dd05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftIndicators:
-  - {fileID: 619908835}
-  - {fileID: 225500165}
-  - {fileID: 147399000}
-  - {fileID: 1997059749}
-  - {fileID: 95897849}
-  - {fileID: 258180118}
-  rightIndicators:
-  - {fileID: 1929133292}
-  - {fileID: 1557561933}
-  - {fileID: 1046911595}
-  - {fileID: 227313611}
-  - {fileID: 1637270272}
-  - {fileID: 427304907}
-  L_IndicatorText:
-  - {fileID: 1492312362}
-  - {fileID: 810608716}
-  - {fileID: 516939330}
-  - {fileID: 1283131175}
-  - {fileID: 1117317280}
-  - {fileID: 585079417}
-  R_IndicatorText:
-  - {fileID: 445007974}
-  - {fileID: 1613531787}
-  - {fileID: 625561645}
-  - {fileID: 1350462501}
-  - {fileID: 1662445406}
-  - {fileID: 1789286884}
-  indText: 
-  player: {fileID: 5393215579921864747}
-  distance: 0
-  camObject: {fileID: 9005220658754338438}
-  playerCam: {fileID: 9005220658754338436}
-  isLeft: 0
-  isRight: 0
-  directionRelativeToCam: {x: 0, y: 0, z: 0}
 --- !u!4 &9161861100621421379
 Transform:
   m_ObjectHideFlags: 0

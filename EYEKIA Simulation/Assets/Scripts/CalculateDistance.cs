@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CalculateDistance : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CalculateDistance : MonoBehaviour
     public TextMeshProUGUI[] L_IndicatorText;
     public TextMeshProUGUI[] R_IndicatorText;
     public string indText;
+
+    public GameObject[] gfx;
 
     //Variables for Calculating Distance
     public GameObject player;
@@ -25,6 +28,8 @@ public class CalculateDistance : MonoBehaviour
     Vector3 directionRelativeToCam;
 
     public bool isAdded;
+
+    Color tmp;
     // Update is called once per frame
     void Update()
     {
@@ -49,11 +54,13 @@ public class CalculateDistance : MonoBehaviour
             isLeft = false;
         }
 
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Capsule")
         {
+            
             //To have the text on left or right depending on direction
             if (isRight && !isLeft)
             {
@@ -410,11 +417,381 @@ public class CalculateDistance : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+        foreach (GameObject image in gfx)
+        {
+            tmp = image.GetComponent<Image>().color;
+            if (this.distance >= player.GetComponent<SphereCollider>().radius)
+            {
+                tmp.a = 0;
+            }
+            else if (this.distance < player.GetComponent<SphereCollider>().radius)
+            {
+                tmp.a = (player.GetComponent<SphereCollider>().radius / this.distance)/10;
+            }
+            else if ((this.distance / player.GetComponent<SphereCollider>().radius) <= 0.75f)
+            {
+                tmp.a = 1f;
+            }
+        }
+
         if (other.name == "Capsule")
         {
+            //indicator texts based on collider
+            //Right side
+            string name = this.gameObject.name;
+            switch (name)
+            {
+                case "LorryMoving":
+                    indText = "Incoming Vehicle";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
 
+                case "MinivanMoving":
+                    indText = "Incoming Vehicle";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "MuscleMoving":
+                    indText = "Incoming Vehicle";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "PoliceMoving":
+                    indText = "SIRENS";
+                    if (R_IndicatorText[0].text != "")
+                    {
+                        gfx[12].GetComponent<Image>().color = tmp;
+                        gfx[13].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[1].text != "")
+                    {
+                        gfx[14].GetComponent<Image>().color = tmp;
+                        gfx[15].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "AmbulanceMoving":
+                    indText = "SIRENS";
+                    if (R_IndicatorText[0].text != "")
+                    {
+                        gfx[12].GetComponent<Image>().color = tmp;
+                        gfx[13].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[1].text != "")
+                    {
+                        gfx[14].GetComponent<Image>().color = tmp;
+                        gfx[15].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "StartMan":
+                    indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        gfx[20].GetComponent<Image>().color = tmp;
+                        gfx[21].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        gfx[22].GetComponent<Image>().color = tmp;
+                        gfx[23].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "CrimeWoman":
+                    indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        gfx[20].GetComponent<Image>().color = tmp;
+                        gfx[21].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        gfx[22].GetComponent<Image>().color = tmp;
+                        gfx[23].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "Man":
+                    indText = "Person Talking";
+                    if (R_IndicatorText[4].text != "")
+                    {
+                        gfx[20].GetComponent<Image>().color = tmp;
+                        gfx[21].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[5].text != "")
+                    {
+                        gfx[22].GetComponent<Image>().color = tmp;
+                        gfx[23].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "LorryCargo":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "Police":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "Minivan":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+
+                case "Ambulance":
+                    indText = "Engine Noises";
+                    if (R_IndicatorText[2].text != "")
+                    {
+                        gfx[16].GetComponent<Image>().color = tmp;
+                        gfx[17].GetComponent<Image>().color = tmp;
+                    }
+                    else if (R_IndicatorText[3].text != "")
+                    {
+                        gfx[18].GetComponent<Image>().color = tmp;
+                        gfx[19].GetComponent<Image>().color = tmp;
+                    }
+                    break;
+            }
+
+            //Left side
+             switch (name)
+             {
+                 case "LorryMoving":
+                     indText = "Incoming Vehicle";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "MinivanMoving":
+                     indText = "Incoming Vehicle";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "MuscleMoving":
+                     indText = "Incoming Vehicle";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "PoliceMoving":
+                     indText = "SIRENS";
+                     if (L_IndicatorText[0].text != "")
+                     {
+                        gfx[0].GetComponent<Image>().color = tmp;
+                        gfx[1].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[1].text != "")
+                     {
+                        gfx[2].GetComponent<Image>().color = tmp;
+                        gfx[3].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "AmbulanceMoving":
+                     indText = "SIRENS";
+                     if (L_IndicatorText[0].text != "")
+                     {
+                        gfx[0].GetComponent<Image>().color = tmp;
+                        gfx[1].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[1].text != "")
+                     {
+                        gfx[2].GetComponent<Image>().color = tmp;
+                        gfx[3].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "StartMan":
+                     indText = "Person Talking";
+                     if (L_IndicatorText[4].text != "")
+                     {
+                        gfx[8].GetComponent<Image>().color = tmp;
+                        gfx[9].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[5].text != "")
+                     {
+                        gfx[10].GetComponent<Image>().color = tmp;
+                        gfx[11].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "CrimeWoman":
+                     indText = "Person Talking";
+                     if (L_IndicatorText[4].text != "")
+                     {
+                        gfx[8].GetComponent<Image>().color = tmp;
+                        gfx[9].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[5].text != "")
+                     {
+                        gfx[10].GetComponent<Image>().color = tmp;
+                        gfx[11].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "Man":
+                     indText = "Person Talking";
+                     if (L_IndicatorText[4].text != "")
+                     {
+                        gfx[8].GetComponent<Image>().color = tmp;
+                        gfx[9].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[5].text != "")
+                     {
+                        gfx[10].GetComponent<Image>().color = tmp;
+                        gfx[11].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "LorryCargo":
+                     indText = "Engine Noises";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "Police":
+                     indText = "Engine Noises";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "Minivan":
+                     indText = "Engine Noises";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+
+                 case "Ambulance":
+                     indText = "Engine Noises";
+                     if (L_IndicatorText[2].text != "")
+                     {
+                        gfx[4].GetComponent<Image>().color = tmp;
+                        gfx[5].GetComponent<Image>().color = tmp;
+                    }
+                     else if (L_IndicatorText[3].text != "")
+                     {
+                        gfx[6].GetComponent<Image>().color = tmp;
+                        gfx[7].GetComponent<Image>().color = tmp;
+                    }
+                     break;
+             }
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.name == "Capsule")
+        {
             //indicator texts based on collider
             //Right side
             string name = this.gameObject.name;
