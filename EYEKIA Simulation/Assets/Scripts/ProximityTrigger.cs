@@ -9,9 +9,16 @@ public class ProximityTrigger : MonoBehaviour
     CalculateDistance distCalc;
     float distance;
 
+    public GameObject[] leftIndicators, rightIndicators;
+    public TextMeshProUGUI[] L_IndicatorText, R_IndicatorText;
+    string indText;
+
+    bool isHeard; //if it makes a sound
+
     private void Start()
     {
         distance = GetComponent<CalculateDistance>().distance; //To get the distance var from CalcDist Class
+
     }
 
     //Subtitle variables
@@ -22,6 +29,8 @@ public class ProximityTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        isHeard = true;
+
         //To calculate the distance once inside radius
         other.gameObject.AddComponent<CalculateDistance>();
 
@@ -33,27 +42,31 @@ public class ProximityTrigger : MonoBehaviour
                 isTalking = true;
                 subText = "Oh no, whatever happened there! Was it some accident?";
                 StartCoroutine(WordForWord());
+
+                indText = "Person Talking";
                 break;
 
             case "CrimeWoman":
                 isTalking = true;
                 subText = "I was driving and suddenly some guy appeared right in front of me. I had to swerve!";
                 StartCoroutine(WordForWord());
+
+                indText = "Person Talking";
                 break;
 
             case "Man":
                 isTalking = true;
                 subText = "What happned just now? I saw the indicator on my Eyekia glasses.";
                 StartCoroutine(WordForWord());
+
+                indText = "Person Talking";
                 break;
 
             case "LorryCargo":
             case "Police":
             case "Minivan":
-                Debug.Log("Engine Noises");
-                break;
             case "Ambulance":
-                Debug.Log("Sirens");
+                indText = "Engine Noises";
                 break;
 
             default:
@@ -67,6 +80,8 @@ public class ProximityTrigger : MonoBehaviour
     //To have no text when out of radius
     private void OnTriggerExit(Collider other)
     {
+        isHeard = false;
+
         //to stop calculating distance when out of range
         Destroy(other.gameObject.GetComponent<CalculateDistance>());
 
@@ -102,6 +117,41 @@ public class ProximityTrigger : MonoBehaviour
                 yield return new WaitForSeconds(randomTime); //pauses between words to mimic live captioning
             }
         }
+    }
+
+    public void AddToIndicator()
+    {
+        if (isHeard && distCalc.isLeft)
+        {
+            for (int i = 0; i < leftIndicators.Length; i++)
+            {
+                if (L_IndicatorText[i] == null)
+                {
+                    leftIndicators[i].SetActive(true);
+                    L_IndicatorText[i].text = indText;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+        }
+        else if (isHeard && distCalc.isRight)
+        {
+            for (int i = 0; i < rightIndicators.Length; i++)
+            {
+                if (R_IndicatorText[i] == null)
+                {
+                    rightIndicators[i].SetActive(true);
+                    R_IndicatorText[i].text = indText;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+        }
+        
     }
 
 }
