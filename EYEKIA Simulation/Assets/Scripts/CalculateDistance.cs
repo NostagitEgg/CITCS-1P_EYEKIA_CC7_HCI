@@ -38,52 +38,20 @@ public class CalculateDistance : MonoBehaviour
         {
             canAddToIndicator = true;
         }
-        else if (proxy.isTriggered == false) 
-        {
-            canAddToIndicator = false;
-        }
-
-        //indicator texts based on collider
-        string name = this.gameObject.name;
-        switch (name)
-        {
-            case "StartMan":
-                indText = "Person Talking";
-                break;
-
-            case "CrimeWoman":
-                indText = "Person Talking";
-                break;
-
-            case "Man":
-                indText = "Person Talking";
-                break;
-
-            case "LorryCargo":
-                indText = "Engine Noises";
-                break;
-
-            case "Police":
-                indText = "Engine Noises";
-                break;
-
-            case "Minivan":
-                indText = "Engine Noises";
-                break;
-
-            case "Ambulance":
-                indText = "Engine Noises";
-                break;
-
-            default:
-                indText = "";
-                break;
-        }
     }
 
     // Update is called once per frame
     void Update()
     { 
+        if(proxy.isTriggered)
+        {
+            canAddToIndicator = true;
+        }
+        else
+        {
+            canAddToIndicator = false;
+        }
+
         distance = Vector3.Distance(transform.position, player.transform.position);
 
         //From reddit
@@ -105,46 +73,75 @@ public class CalculateDistance : MonoBehaviour
             isLeft = false;
         }
 
-        //To have the text on left or right depending on direction, and to use free indicator space
-        if (isRight && !isLeft)
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //To have the text on left or right depending on direction
+        if (isRight && !isLeft && canAddToIndicator)
         {
-            for (int i = 0; i <= 5 && canAddToIndicator; i++)
+            //indicator texts based on collider
+            string name = this.gameObject.name;
+            switch (name)
             {
-                if (R_IndicatorText[i].text == "")
-                {
-                    R_IndicatorText[i].text = indText;
-                }
-                else if (R_IndicatorText[i].text != "")
-                {
-                    R_IndicatorText[i + 1].text = indText;
-                }
-                if (R_IndicatorText[5].text != "")
-                {
-                    canAddToIndicator = false;
-                    R_IndicatorText[i].text = "";
-                }
+                case "LorryMoving":
+                case "MinivanMoving":
+                case "MuscleMoving":
+                    indText = "Incoming Vehicle";
+                    R_IndicatorText[1].text = indText;
+
+                    if(R_IndicatorText[1] != null)
+                    {
+                        R_IndicatorText[2].text = indText;
+
+                        if (R_IndicatorText[2] != null)
+                        {
+                            R_IndicatorText[3].text = indText;
+                        }
+                    }
+                    break;
+
+                case "PoliceMoving":
+                case "AmbulanceMoving":
+                    indText = "SIRENS";
+                    R_IndicatorText[0].text = indText;
+                    break;
+
+                case "StartMan":
+                    indText = "Person Talking";
+                    break;
+
+                case "CrimeWoman":
+                    indText = "Person Talking";
+                    break;
+
+                case "Man":
+                    indText = "Person Talking";
+                    break;
+
+                case "LorryCargo":
+                case "Police":
+                case "Minivan":
+                case "Ambulance":
+                    indText = "Engine Noises";
+                    break;
+
+                default:
+                    indText = "";
+
+                    if (!canAddToIndicator)
+                    {
+                        R_IndicatorText[0].text = "";
+                    }
+                    break;
             }
+
+            
         }
-        else if (isLeft && !isRight)
+        else if (isLeft && !isRight && canAddToIndicator)
         {
 
-            for (int i = 0; i < 5 && canAddToIndicator; i++)
-            {
-                if (L_IndicatorText[i].text == "")
-                {
-                    L_IndicatorText[i].text = indText;
-                    R_IndicatorText[i].text = "";
-                }
-                else if (L_IndicatorText[i].text != "")
-                {
-                    L_IndicatorText[i + 1].text = indText;
-                }
-                if (R_IndicatorText[5].text != "")
-                {
-                    canAddToIndicator = false;
-                    R_IndicatorText[i].text = "";
-                }
-            }
+
         }
     }
 }
