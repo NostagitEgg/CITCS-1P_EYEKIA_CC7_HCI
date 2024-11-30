@@ -2,34 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class ProximityTrigger : MonoBehaviour
 {
     //Indicator variables
-   /* CalculateDistance distCalc;
-
     public GameObject[] leftIndicators;
     public GameObject[] rightIndicators;
     public TextMeshProUGUI[] L_IndicatorText;
-    public TextMeshProUGUI[] R_IndicatorText;*/
+    public TextMeshProUGUI[] R_IndicatorText;
     public string indText;
-
-    public bool isHeard; //if it makes a sound
-
+    
     //Subtitle variables
     public TextMeshProUGUI subtitles;
     string subText;
 
     bool isTalking; //To check if someone near is talking
 
-    /*private void Start()
-    {
-        distCalc = GetComponent<CalculateDistance>();
-    }*/
+    //Variables for Calculating Distance
+    public GameObject player;
+    public float distance;
 
+    //Variables for Calculating Position of object (left or right of player)
+    public GameObject camObject;
+    public Camera playerCam;
+
+    public bool isLeft, isRight;
+    [SerializeField]
+    Vector3 directionRelativeToCam;
+
+    [SerializeField]
+    int colliderCounter = 0;
     private void OnTriggerEnter(Collider other)
     {
-        isHeard = true;
 
         //If the object in the trigger collider of the player is named...do this
         string name = other.name;
@@ -53,15 +58,24 @@ public class ProximityTrigger : MonoBehaviour
 
             case "Man":
                 isTalking = true;
-                subText = "What happned just now? I saw the indicator on my Eyekia glasses.";
+                subText = "What happened just now? I saw the indicator on my Eyekia glasses.";
                 StartCoroutine(WordForWord());
 
                 indText = "Person Talking";
                 break;
 
             case "LorryCargo":
+                indText = "Engine Noises";
+                break;
+
             case "Police":
+                indText = "Engine Noises";
+                break;
+
             case "Minivan":
+                indText = "Engine Noises";
+                break;
+
             case "Ambulance":
                 indText = "Engine Noises";
                 break;
@@ -73,49 +87,53 @@ public class ProximityTrigger : MonoBehaviour
                 break;
         }
 
-        
-        /*if (distCalc.isLeft)
+        if(other.name != "Capsule")
         {
-            for (int i = 0; i < leftIndicators.Length; i++)
+            colliderCounter += 1;
+
+            if(colliderCounter >= 6)
             {
-                //leftIndicators[i].SetActive(true);
-                //if text in the indicator is empty, make the holder active and make it the text
-                if (L_IndicatorText[i].text == "")
-                {
-                    L_IndicatorText[i].text = indText;
-                }
-                else
-                {
-                    i++;
-                }
+                colliderCounter = 0; //Reset counter to avoid out of bounds
             }
         }
-        else if (distCalc.isRight)
-        {
-             for (int i = 0; i < rightIndicators.Length; i++)
-             {
-                 //rightIndicators[i].SetActive(true);
-                 if (R_IndicatorText[i].text == "")
-                 {
-                     R_IndicatorText[i].text = indText;
-                 }
-                 else
-                 {
-                     i++;
-                 }
-             }
-        }*/
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.name != "Capsule")
+        {
+            distance = Vector3.Distance(other.transform.position, player.transform.position);
+
+            //From reddit
+            //Direction of this object from player
+            directionRelativeToCam = other.transform.position - player.transform.position;
+            //however the direction is not that useful because if your player faces north, his right side is to the east, but if he 
+            //faces south, his right side is west.
+            //so we need to rotate the direction Dir, to make sure it is unaffected by the players rotation
+            directionRelativeToCam = Quaternion.Inverse(player.transform.rotation) * directionRelativeToCam;
+        }
+        
+        if (directionRelativeToCam.x < 0)
+        {
+            isRight = false;
+            isLeft = true;
+        }
+        else if (directionRelativeToCam.x > 0)
+        {
+            isRight = true;
+            isLeft = false;
+        }
     }
 
     //To have no text when out of radius
     private void OnTriggerExit(Collider other)
     {
-        isHeard = false;
-
+        colliderCounter -= 1;
         subText = "";
         subtitles.text = subText;
         isTalking = false;
+
+        indText = "";
     }
 
     // Update is called once per frame
@@ -129,6 +147,37 @@ public class ProximityTrigger : MonoBehaviour
         else
         {
             isTalking = false;
+        }
+
+        //To have the text on left or right depending on direction, and to use free indicator space
+        if (isRight && !isLeft)
+        {
+            for (int i = 0; i < colliderCounter; i++)
+            {
+                if (R_IndicatorText[i].text == "")
+                {
+                    R_IndicatorText[i].text = indText;
+                }
+                else if (R_IndicatorText[i].text != "")
+                {
+                    R_IndicatorText[i + 1].text = indText;
+                }
+            }
+        }
+        else if (isLeft && !isRight)
+        {
+
+            for (int i = 0; i < colliderCounter; i++)
+            {
+                if (L_IndicatorText[i].text == "")
+                {
+                    L_IndicatorText[i].text = indText;
+                }
+                else if (L_IndicatorText[i].text != "")
+                {
+                    L_IndicatorText[i + 1].text = indText;
+                }
+            }
         }
     }
 
@@ -146,41 +195,6 @@ public class ProximityTrigger : MonoBehaviour
             }
         }
     }
-
-    /*public void AddToLeftIndicator()
-    {
-        for (int i = 0; i < leftIndicators.Length; i++)
-        {
-            //leftIndicators[i].SetActive(true);
-            //if text in the indicator is empty, make the holder active and make it the text
-            if (L_IndicatorText[i] == null)
-            {
-                L_IndicatorText[i].text = indText;
-            }
-            else
-            {
-                i++;
-            }
-        }
-        
-    }
-
-    public void AddToRightIndicator()
-    {
-        for (int i = 0; i < rightIndicators.Length; i++)
-        {
-            //rightIndicators[i].SetActive(true);
-            if (R_IndicatorText[i] == null)
-            {
-                R_IndicatorText[i].text = indText;
-            }
-            else
-            {
-                i++;
-            }
-        }
-
-    }*/
 
 }
 

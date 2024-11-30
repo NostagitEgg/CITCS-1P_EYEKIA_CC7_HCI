@@ -24,10 +24,10 @@ public class CalculateDistance : MonoBehaviour
     string indText;
     bool isHeard;
 
-    private void Start()
+    /*private void Start()
     {
         isHeard = player.GetComponent<ProximityTrigger>().isHeard;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -59,7 +59,7 @@ public class CalculateDistance : MonoBehaviour
                 break;
         }
 
-        distance = Vector3.Distance(transform.position, player.transform.position);
+         distance = Vector3.Distance(transform.position, player.transform.position);
 
          //From reddit
          //Direction of this object from player
@@ -69,7 +69,7 @@ public class CalculateDistance : MonoBehaviour
          //so we need to rotate the direction Dir, to make sure it is unaffected by the players rotation
          directionRelativeToCam = Quaternion.Inverse(player.transform.rotation) * directionRelativeToCam;
 
-        if (directionRelativeToCam.x < 0)
+        /*if (directionRelativeToCam.x < 0 && isHeard)
         {
              isRight = false;
              isLeft = true;
@@ -89,7 +89,7 @@ public class CalculateDistance : MonoBehaviour
                  }
              }
         }
-        else
+        else if (directionRelativeToCam.x > 0 && isHeard)
         {
              isRight = true;
              isLeft = false;
@@ -107,7 +107,8 @@ public class CalculateDistance : MonoBehaviour
                      i++;
                  }
              }
-        }
+        }*/
+        
     
     }
 }
