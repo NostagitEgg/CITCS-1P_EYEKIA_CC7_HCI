@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class CalculateDistance : MonoBehaviour
 {
+    //For Modes
+    Modes mode;
+
+    private void Start()
+    {
+        mode = GameObject.FindObjectOfType<Modes>();
+    }
     //Indicator variables
     public GameObject[] leftIndicators;
     public GameObject[] rightIndicators;
@@ -58,7 +65,7 @@ public class CalculateDistance : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Capsule")
+        if (other.name == "Capsule" && mode.isOn && !mode.isOff)
         {
             
             //To have the text on left or right depending on direction
@@ -181,59 +188,75 @@ public class CalculateDistance : MonoBehaviour
                         break;
 
                     case "LorryCargo":
-                        indText = "Engine Noises";
-                        if (R_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            R_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (R_IndicatorText[2].text == "")
+                            {
+                                R_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (R_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                R_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (R_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            R_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
 
                     case "Police":
-                        indText = "Engine Noises";
-                        if (R_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            R_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (R_IndicatorText[2].text == "")
+                            {
+                                R_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (R_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                R_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (R_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            R_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
 
                     case "Minivan":
-                        indText = "Engine Noises";
-                        if (R_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            R_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (R_IndicatorText[2].text == "")
+                            {
+                                R_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (R_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                R_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (R_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            R_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                       
                         break;
 
                     case "Ambulance":
-                        indText = "Engine Noises";
-                        if (R_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            R_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (R_IndicatorText[2].text == "")
+                            {
+                                R_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (R_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                R_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (R_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            R_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
                 }
 
@@ -358,59 +381,75 @@ public class CalculateDistance : MonoBehaviour
                         break;
 
                     case "LorryCargo":
-                        indText = "Engine Noises";
-                        if (L_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            L_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (L_IndicatorText[2].text == "")
+                            {
+                                L_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (L_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                L_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (L_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            L_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
 
                     case "Police":
-                        indText = "Engine Noises";
-                        if (L_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            L_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (L_IndicatorText[2].text == "")
+                            {
+                                L_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (L_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                L_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (L_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            L_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                       
                         break;
 
                     case "Minivan":
-                        indText = "Engine Noises";
-                        if (L_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            L_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (L_IndicatorText[2].text == "")
+                            {
+                                L_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (L_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                L_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (L_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            L_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
 
                     case "Ambulance":
-                        indText = "Engine Noises";
-                        if (L_IndicatorText[2].text == "")
+                        if (!mode.isFocused)
                         {
-                            L_IndicatorText[2].text = indText;
-                            isAdded = true;
+                            indText = "Engine Noises";
+                            if (L_IndicatorText[2].text == "")
+                            {
+                                L_IndicatorText[2].text = indText;
+                                isAdded = true;
+                            }
+                            else if (L_IndicatorText[2].text != "" && !isAdded)
+                            {
+                                L_IndicatorText[3].text = indText;
+                                isAdded = true;
+                            }
                         }
-                        else if (L_IndicatorText[2].text != "" && !isAdded)
-                        {
-                            L_IndicatorText[3].text = indText;
-                            isAdded = true;
-                        }
+                        
                         break;
                 }
             }
@@ -428,7 +467,7 @@ public class CalculateDistance : MonoBehaviour
             }
             else if (this.distance < player.GetComponent<SphereCollider>().radius)
             {
-                tmp.a = (player.GetComponent<SphereCollider>().radius / this.distance)/10;
+                tmp.a = (player.GetComponent<SphereCollider>().radius / this.distance)/5;
             }
             else if ((this.distance / player.GetComponent<SphereCollider>().radius) <= 0.75f)
             {
@@ -436,7 +475,7 @@ public class CalculateDistance : MonoBehaviour
             }
         }
 
-        if (other.name == "Capsule")
+        if (other.name == "Capsule" && mode.isOn && !mode.isOff)
         {
             //indicator texts based on collider
             //Right side
@@ -556,58 +595,70 @@ public class CalculateDistance : MonoBehaviour
                     break;
 
                 case "LorryCargo":
-                    indText = "Engine Noises";
-                    if (R_IndicatorText[2].text != "")
+                    if (!mode.isFocused)
                     {
-                        gfx[16].GetComponent<Image>().color = tmp;
-                        gfx[17].GetComponent<Image>().color = tmp;
-                    }
-                    else if (R_IndicatorText[3].text != "")
-                    {
-                        gfx[18].GetComponent<Image>().color = tmp;
-                        gfx[19].GetComponent<Image>().color = tmp;
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text != "")
+                        {
+                            gfx[16].GetComponent<Image>().color = tmp;
+                            gfx[17].GetComponent<Image>().color = tmp;
+                        }
+                        else if (R_IndicatorText[3].text != "")
+                        {
+                            gfx[18].GetComponent<Image>().color = tmp;
+                            gfx[19].GetComponent<Image>().color = tmp;
+                        }
                     }
                     break;
 
                 case "Police":
-                    indText = "Engine Noises";
-                    if (R_IndicatorText[2].text != "")
+                    if (!mode.isFocused)
                     {
-                        gfx[16].GetComponent<Image>().color = tmp;
-                        gfx[17].GetComponent<Image>().color = tmp;
-                    }
-                    else if (R_IndicatorText[3].text != "")
-                    {
-                        gfx[18].GetComponent<Image>().color = tmp;
-                        gfx[19].GetComponent<Image>().color = tmp;
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text != "")
+                        {
+                            gfx[16].GetComponent<Image>().color = tmp;
+                            gfx[17].GetComponent<Image>().color = tmp;
+                        }
+                        else if (R_IndicatorText[3].text != "")
+                        {
+                            gfx[18].GetComponent<Image>().color = tmp;
+                            gfx[19].GetComponent<Image>().color = tmp;
+                        }
                     }
                     break;
 
                 case "Minivan":
-                    indText = "Engine Noises";
-                    if (R_IndicatorText[2].text != "")
+                    if (!mode.isFocused)
                     {
-                        gfx[16].GetComponent<Image>().color = tmp;
-                        gfx[17].GetComponent<Image>().color = tmp;
-                    }
-                    else if (R_IndicatorText[3].text != "")
-                    {
-                        gfx[18].GetComponent<Image>().color = tmp;
-                        gfx[19].GetComponent<Image>().color = tmp;
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text != "")
+                        {
+                            gfx[16].GetComponent<Image>().color = tmp;
+                            gfx[17].GetComponent<Image>().color = tmp;
+                        }
+                        else if (R_IndicatorText[3].text != "")
+                        {
+                            gfx[18].GetComponent<Image>().color = tmp;
+                            gfx[19].GetComponent<Image>().color = tmp;
+                        }
                     }
                     break;
 
                 case "Ambulance":
-                    indText = "Engine Noises";
-                    if (R_IndicatorText[2].text != "")
+                    if (!mode.isFocused)
                     {
-                        gfx[16].GetComponent<Image>().color = tmp;
-                        gfx[17].GetComponent<Image>().color = tmp;
-                    }
-                    else if (R_IndicatorText[3].text != "")
-                    {
-                        gfx[18].GetComponent<Image>().color = tmp;
-                        gfx[19].GetComponent<Image>().color = tmp;
+                        indText = "Engine Noises";
+                        if (R_IndicatorText[2].text != "")
+                        {
+                            gfx[16].GetComponent<Image>().color = tmp;
+                            gfx[17].GetComponent<Image>().color = tmp;
+                        }
+                        else if (R_IndicatorText[3].text != "")
+                        {
+                            gfx[18].GetComponent<Image>().color = tmp;
+                            gfx[19].GetComponent<Image>().color = tmp;
+                        }
                     }
                     break;
             }
@@ -729,58 +780,74 @@ public class CalculateDistance : MonoBehaviour
 
                  case "LorryCargo":
                      indText = "Engine Noises";
-                     if (L_IndicatorText[2].text != "")
-                     {
-                        gfx[4].GetComponent<Image>().color = tmp;
-                        gfx[5].GetComponent<Image>().color = tmp;
+                    if (!mode.isFocused)
+                    {
+                        if (L_IndicatorText[2].text != "")
+                        {
+                            gfx[4].GetComponent<Image>().color = tmp;
+                            gfx[5].GetComponent<Image>().color = tmp;
+                        }
+                        else if (L_IndicatorText[3].text != "")
+                        {
+                            gfx[6].GetComponent<Image>().color = tmp;
+                            gfx[7].GetComponent<Image>().color = tmp;
+                        }
                     }
-                     else if (L_IndicatorText[3].text != "")
-                     {
-                        gfx[6].GetComponent<Image>().color = tmp;
-                        gfx[7].GetComponent<Image>().color = tmp;
-                    }
+                    
                      break;
 
                  case "Police":
                      indText = "Engine Noises";
-                     if (L_IndicatorText[2].text != "")
-                     {
-                        gfx[4].GetComponent<Image>().color = tmp;
-                        gfx[5].GetComponent<Image>().color = tmp;
+                    if (!mode.isFocused)
+                    {
+                        if (L_IndicatorText[2].text != "")
+                        {
+                            gfx[4].GetComponent<Image>().color = tmp;
+                            gfx[5].GetComponent<Image>().color = tmp;
+                        }
+                        else if (L_IndicatorText[3].text != "")
+                        {
+                            gfx[6].GetComponent<Image>().color = tmp;
+                            gfx[7].GetComponent<Image>().color = tmp;
+                        }
                     }
-                     else if (L_IndicatorText[3].text != "")
-                     {
-                        gfx[6].GetComponent<Image>().color = tmp;
-                        gfx[7].GetComponent<Image>().color = tmp;
-                    }
+                    
                      break;
 
                  case "Minivan":
                      indText = "Engine Noises";
-                     if (L_IndicatorText[2].text != "")
-                     {
-                        gfx[4].GetComponent<Image>().color = tmp;
-                        gfx[5].GetComponent<Image>().color = tmp;
+                    if (!mode.isFocused)
+                    {
+                        if (L_IndicatorText[2].text != "")
+                        {
+                            gfx[4].GetComponent<Image>().color = tmp;
+                            gfx[5].GetComponent<Image>().color = tmp;
+                        }
+                        else if (L_IndicatorText[3].text != "")
+                        {
+                            gfx[6].GetComponent<Image>().color = tmp;
+                            gfx[7].GetComponent<Image>().color = tmp;
+                        }
                     }
-                     else if (L_IndicatorText[3].text != "")
-                     {
-                        gfx[6].GetComponent<Image>().color = tmp;
-                        gfx[7].GetComponent<Image>().color = tmp;
-                    }
+                    
                      break;
 
                  case "Ambulance":
                      indText = "Engine Noises";
-                     if (L_IndicatorText[2].text != "")
-                     {
-                        gfx[4].GetComponent<Image>().color = tmp;
-                        gfx[5].GetComponent<Image>().color = tmp;
+                    if (!mode.isFocused)
+                    {
+                        if (L_IndicatorText[2].text != "")
+                        {
+                            gfx[4].GetComponent<Image>().color = tmp;
+                            gfx[5].GetComponent<Image>().color = tmp;
+                        }
+                        else if (L_IndicatorText[3].text != "")
+                        {
+                            gfx[6].GetComponent<Image>().color = tmp;
+                            gfx[7].GetComponent<Image>().color = tmp;
+                        }
                     }
-                     else if (L_IndicatorText[3].text != "")
-                     {
-                        gfx[6].GetComponent<Image>().color = tmp;
-                        gfx[7].GetComponent<Image>().color = tmp;
-                    }
+                    
                      break;
              }
 
@@ -790,7 +857,7 @@ public class CalculateDistance : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.name == "Capsule")
+        if (other.name == "Capsule" && mode.isOn && !mode.isOff)
         {
             //indicator texts based on collider
             //Right side
